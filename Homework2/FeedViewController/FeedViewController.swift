@@ -13,6 +13,9 @@ class FeedViewController: UIViewController {
   
   private let feedCellIdentifier = "FeedCollectionViewCell"
   
+  var delegate: FeedViewControllerToNewsDetailViewControllerProtocol?
+  var news:[NewsModel] = []
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
@@ -20,6 +23,18 @@ class FeedViewController: UIViewController {
     
     feedCollectionView.delegate = self
     feedCollectionView.dataSource = self
+    
+    let news1: NewsModel = NewsModel(name: "Vakıfbank iOS Bootcamp", image: "vakifbank", description: "Lorem Ipsum", link: "https://www.patika.dev/bootcamp/vakifbank-ios-swift-bootcamp")
+    let news2: NewsModel = NewsModel(name: "Solid Electron Angular Practicum", image: "solidElectron", description: "Lorem Ipsum", link: "https://www.patika.dev/bootcamp/solid-electron-angular-practicum")
+    let news3: NewsModel = NewsModel(name: "A101 Test Otomasyon Practicum", image: "a101", description: "Lorem Ipsum", link: "https://www.patika.dev/bootcamp/a101-test-otomasyon-practicum")
+    let news4: NewsModel = NewsModel(name: "Vitra & GoLive SAP Bootcamp", image: "vitra", description: "Lorem Ipsum", link: "https://www.patika.dev/bootcamp/vitra-golive-sap-bootcamp")
+    let news5: NewsModel = NewsModel(name: "Papara.Net Core Bootcamp", image: "papara", description: "Lorem Ipsum", link: "https://www.patika.dev/bootcamp/papara-net-core-bootcamp")
+    
+    news.append(news1)
+    news.append(news2)
+    news.append(news3)
+    news.append(news4)
+    news.append(news5)
     
   }
 }
@@ -32,12 +47,17 @@ extension FeedViewController: UICollectionViewDelegate {
 
 extension FeedViewController: UICollectionViewDataSource {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return news.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = feedCollectionView.dequeueReusableCell(withReuseIdentifier: feedCellIdentifier, for: indexPath) as! FeedCollectionViewCell
-    //cell.backgroundColor = UIColor.init(red: 0.971, green: 0.747, blue: 0.365, alpha: 1.0)
+    let news = self.news[indexPath.row]
+    
+    cell.newsNameLabel.text = news.name
+    cell.newsImage.image = UIImage(named: news.image)
+    cell.newsDescriptionLabel.text = news.description
+    
     cell.layer.cornerRadius = 10
     return cell
   }
