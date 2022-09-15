@@ -15,6 +15,8 @@ class NewsDetailViewController: UIViewController {
   
   var incomingNews: NewsModel?
   
+  var newsWebKitVCDelegate: NewsDetailViewControllerToNewsWebKitViewControllerProtocol?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     setThePage()
@@ -22,6 +24,10 @@ class NewsDetailViewController: UIViewController {
   
   @IBAction func detailButtonTapped(_ sender: Any) {
     let destVC = self.storyboard?.instantiateViewController(withIdentifier: "newsWebKitViewController") as! NewsWebKitViewController
+    self.newsWebKitVCDelegate = destVC
+    if let link = incomingNews?.link {
+      self.newsWebKitVCDelegate?.sendLink(link: link)
+    }
     present(destVC, animated: true)
   }
   

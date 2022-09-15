@@ -10,3 +10,7 @@ import Foundation
 protocol FeedViewControllerToNewsDetailViewControllerProtocol {
   func sendNews(news: NewsModel)
 }
+
+protocol NewsDetailViewControllerToNewsWebKitViewControllerProtocol {
+  func sendLink(link: String)
+}

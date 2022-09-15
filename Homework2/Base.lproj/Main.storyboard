@@ -140,7 +140,23 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-4g-Mih">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <subviews>
+                                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-LR-kiW">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="pSD-LR-kiW" secondAttribute="bottom" id="0q7-Wv-1SR"/>
+                                    <constraint firstAttribute="trailing" secondItem="pSD-LR-kiW" secondAttribute="trailing" id="6py-Ux-szZ"/>
+                                    <constraint firstItem="pSD-LR-kiW" firstAttribute="top" secondItem="cGj-4g-Mih" secondAttribute="top" id="Ctv-CM-SNe"/>
+                                    <constraint firstItem="pSD-LR-kiW" firstAttribute="leading" secondItem="cGj-4g-Mih" secondAttribute="leading" id="Wm9-dG-a5M"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F6H-S1-GU6"/>
@@ -152,6 +168,9 @@
                             <constraint firstItem="F6H-S1-GU6" firstAttribute="bottom" secondItem="cGj-4g-Mih" secondAttribute="bottom" id="jYX-2l-mwf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="webView" destination="pSD-LR-kiW" id="LO0-za-Eaz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tvl-7Q-YEl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
