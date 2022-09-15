@@ -50,7 +50,7 @@
                     <navigationItem key="navigationItem" id="JXM-yd-RQn"/>
                     <connections>
                         <outlet property="feedCollectionView" destination="FHv-JE-Wih" id="OJ3-rK-VLo"/>
-                        <segue destination="qrh-2a-zlY" kind="show" id="p2C-Y8-fl3"/>
+                        <segue destination="qrh-2a-zlY" kind="show" identifier="toNewsDetail" id="p2C-Y8-fl3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -60,7 +60,7 @@
         <!--News Detail View Controller-->
         <scene sceneID="OIa-9T-IYa">
             <objects>
-                <viewController id="qrh-2a-zlY" customClass="NewsDetailViewController" customModule="Homework2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsDetailViewController" id="qrh-2a-zlY" customClass="NewsDetailViewController" customModule="Homework2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4OB-OB-6SF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,35 +74,39 @@
                                             <constraint firstAttribute="height" constant="160" id="Ptb-4U-Jjo"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY3-5Z-2we">
-                                        <rect key="frame" x="50" y="186" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EY3-5Z-2we">
+                                        <rect key="frame" x="70" y="190" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-1C-oWl">
-                                        <rect key="frame" x="50" y="215" width="42" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cog-1C-oWl">
+                                        <rect key="frame" x="70" y="231" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ke-jJ-sxK">
-                                        <rect key="frame" x="41" y="244" width="62" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ke-jJ-sxK">
+                                        <rect key="frame" x="60" y="272" width="62" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Detay"/>
                                         <connections>
-                                            <segue destination="Yzg-JR-p43" kind="presentation" id="T7r-TQ-0JV"/>
+                                            <action selector="detailButtonTapped:" destination="qrh-2a-zlY" eventType="touchUpInside" id="6R5-8a-5iF"/>
+                                            <segue destination="Yzg-JR-p43" kind="presentation" id="7dD-Qm-wEy"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Xia-Sf-l4U" secondAttribute="trailing" constant="50" id="1NK-GS-R0u"/>
+                                    <constraint firstItem="Cog-1C-oWl" firstAttribute="top" secondItem="EY3-5Z-2we" secondAttribute="bottom" constant="20" id="3xn-Mi-LMb"/>
+                                    <constraint firstItem="2ke-jJ-sxK" firstAttribute="leading" secondItem="RFg-3A-1ZU" secondAttribute="leading" constant="60" id="DFf-ce-TAf"/>
                                     <constraint firstItem="Xia-Sf-l4U" firstAttribute="leading" secondItem="RFg-3A-1ZU" secondAttribute="leading" constant="50" id="Dw5-1F-8s8"/>
                                     <constraint firstItem="Xia-Sf-l4U" firstAttribute="top" secondItem="RFg-3A-1ZU" secondAttribute="top" constant="10" id="R5l-dG-aeF"/>
+                                    <constraint firstItem="EY3-5Z-2we" firstAttribute="top" secondItem="Xia-Sf-l4U" secondAttribute="bottom" constant="20" id="g68-C6-qzI"/>
+                                    <constraint firstItem="2ke-jJ-sxK" firstAttribute="top" secondItem="Cog-1C-oWl" secondAttribute="bottom" constant="20" id="gZY-Va-gjL"/>
+                                    <constraint firstItem="Cog-1C-oWl" firstAttribute="leading" secondItem="RFg-3A-1ZU" secondAttribute="leading" constant="70" id="tvu-95-3RA"/>
+                                    <constraint firstItem="EY3-5Z-2we" firstAttribute="leading" secondItem="RFg-3A-1ZU" secondAttribute="leading" constant="70" id="uxZ-p1-O08"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -116,6 +120,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PV8-iZ-F3k"/>
+                    <connections>
+                        <outlet property="newsDescriptionLabel" destination="Cog-1C-oWl" id="7VC-pO-Uf4"/>
+                        <outlet property="newsImage" destination="Xia-Sf-l4U" id="9Lm-tD-6kh"/>
+                        <outlet property="newsNameLabel" destination="EY3-5Z-2we" id="21b-i0-sUv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o15-Tb-yio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -124,27 +133,23 @@
         <!--News Web Kit View Controller-->
         <scene sceneID="J3D-B9-0Pa">
             <objects>
-                <viewController id="Yzg-JR-p43" customClass="NewsWebKitViewController" customModule="Homework2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsWebKitViewController" id="Yzg-JR-p43" customClass="NewsWebKitViewController" customModule="Homework2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xZ3-cP-DZd">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zgd-DZ-Ihy">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGj-4g-Mih">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="F6H-S1-GU6"/>
                         <color key="backgroundColor" red="0.97252696750000001" green="0.74911564590000002" blue="0.3626761436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="F6H-S1-GU6" firstAttribute="bottom" secondItem="zgd-DZ-Ihy" secondAttribute="bottom" id="U7z-0l-ery"/>
-                            <constraint firstItem="zgd-DZ-Ihy" firstAttribute="leading" secondItem="F6H-S1-GU6" secondAttribute="leading" id="VJX-HB-u1b"/>
-                            <constraint firstItem="zgd-DZ-Ihy" firstAttribute="top" secondItem="F6H-S1-GU6" secondAttribute="top" id="Yjk-bB-13r"/>
-                            <constraint firstItem="F6H-S1-GU6" firstAttribute="trailing" secondItem="zgd-DZ-Ihy" secondAttribute="trailing" id="aHK-cM-rSf"/>
+                            <constraint firstItem="F6H-S1-GU6" firstAttribute="trailing" secondItem="cGj-4g-Mih" secondAttribute="trailing" id="QoZ-l0-Ffm"/>
+                            <constraint firstItem="cGj-4g-Mih" firstAttribute="top" secondItem="F6H-S1-GU6" secondAttribute="top" id="XYe-lW-kMn"/>
+                            <constraint firstItem="cGj-4g-Mih" firstAttribute="leading" secondItem="F6H-S1-GU6" secondAttribute="leading" id="clC-Ba-uhg"/>
+                            <constraint firstItem="F6H-S1-GU6" firstAttribute="bottom" secondItem="cGj-4g-Mih" secondAttribute="bottom" id="jYX-2l-mwf"/>
                         </constraints>
                     </view>
                 </viewController>

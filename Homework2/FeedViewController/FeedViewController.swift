@@ -42,6 +42,13 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UICollectionViewDelegate {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     print("\(indexPath.row)")
+    
+    let destVC = self.storyboard?.instantiateViewController(withIdentifier: "newsDetailViewController") as! NewsDetailViewController
+    self.delegate = destVC
+    let news = self.news[indexPath.row]
+    
+    self.delegate?.sendNews(news: news)
+    navigationController?.pushViewController(destVC, animated: true)
   }
 }
 
@@ -59,6 +66,7 @@ extension FeedViewController: UICollectionViewDataSource {
     cell.newsDescriptionLabel.text = news.description
     
     cell.layer.cornerRadius = 10
+    
     return cell
   }
 }

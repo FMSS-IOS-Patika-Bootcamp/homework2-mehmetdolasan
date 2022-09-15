@@ -13,14 +13,4 @@ struct NewsModel {
   var description:String
   var link:String
   
-  init(name:String,
-       image:String,
-       description:String,
-       link:String){
-    
-    self.name = name
-    self.image = image
-    self.description = description
-    self.link = link
-  }
 }
