@@ -1,23 +1,40 @@
-# HomeWork2
+# FMSS-Homework-2
 
-![img](images/1.png)
-![img](images/2.png)
-![img](images/3.png)
-![img](images/4.png)
+## Description
 
-İkinci Ödev
+- Bootcamp News App
+- First ViewController contains a collectionView
+- Second ViewController contains detail about each news
+- Third ViewController contains a webKit for the bootcamp page's link
 
-          Haber Uygulaması
-- İlk sayfada Haberler Listelenicek.
-- Haberler   TableView yada # CollecitionView ile gösterilecek.
-- Habere tıklanınca  ilgili Haberin detay sayfası acılıcak.
-- Geçişler  Navigation Controller ile gerçekleştirilicek.
-- Haber Detayına gecerken Struct gönderip. Detay sayfasında Navigation Title bu structan alınıcak.
-- Detay sayfasındaki Description ( Açıklama ) bölümü gönderdiğimiz Streuctan alınıcak.
-- Detay sayfasının Description ( Acıklama ) bölümüne 20 px aralık ile Bir buton konumlandırılıcak. 
-- Detay sayfasındaki Butona bastığımızda 3. bir ekrana gidilicek.
-- 3. Ekranımızda Webview olucak ve ilgili Habere yönlendirilicek ( Burada istediğiniz siteye yönlendirme yapabilirsiniz Dumyy Haberlerle çalışıcaksınız. Örnek: https://www.google.com.tr/  )
+---
 
+<div style="text-align: center" >
+    <img src="images/1.png" width="300"></img>
+</div>
 
-# CollectionView da bir row da 2 ve daha fazla Haber gösterebilen extra puan alıcaktır.
-- İsteyen Uygulamasını Icon Koyabilir.
+---
+<div >
+    <img src="gif/App.gif" width="270"></img><img src="images/2.png" width="300"></img>
+</div>
+
+---
+
+<div>
+    <div style="text-align: left" >
+    <img src="images/3.png" width="300"></img><img src="images/4.png" width="300"></img>
+</div>
+
+<div style="text-align: center" >
+    
+</div>
+</div>
+
+---
+
+## Tools
+- Swift
+    - Delegate Pattern
+    - WebKit
+- UIKit
+
