@@ -2,15 +2,15 @@
 
 ## Description
 
-- Bootcamp News App
+- Bootcamp News
 - First ViewController contains a collectionView
 - Second ViewController contains detail about each news
 - Third ViewController contains a webKit for the bootcamp page's link
 
 ---
 
-<div style="text-align: center" >
-    <img src="images/1.png" width="300"></img>
+<div align="center">
+    <img src="images/1.png" width="300" height="180"></img>
 </div>
 
 ---
